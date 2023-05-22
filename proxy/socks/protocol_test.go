@@ -43,12 +43,12 @@ func TestReadUsernamePassword(t *testing.T) {
 		Error    bool
 	}{
 		{
-			Input:    []byte{0x05, 0x01, 'a', 0x02, 'b', 'c'},
+			Input:    []byte{0x06, 0x01, 'a', 0x02, 'b', 'c'},
 			Username: "a",
 			Password: "bc",
 		},
 		{
-			Input: []byte{0x05, 0x18, 'a', 0x02, 'b', 'c'},
+			Input: []byte{0x06, 0x18, 'a', 0x02, 'b', 'c'},
 			Error: true,
 		},
 	}
@@ -109,7 +109,7 @@ func TestReadUntilNull(t *testing.T) {
 }
 
 func BenchmarkReadUsernamePassword(b *testing.B) {
-	input := []byte{0x05, 0x01, 'a', 0x02, 'b', 'c'}
+	input := []byte{0x06, 0x01, 'a', 0x02, 'b', 'c'}
 	buffer := buf.New()
 	buffer.Write(input)
 

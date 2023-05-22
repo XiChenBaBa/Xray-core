@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	socks5Version = 0x05
+	socks5Version = 0x06
 	socks4Version = 0x04
 
 	cmdTCPConnect    = 0x01
